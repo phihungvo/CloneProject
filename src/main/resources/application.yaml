@@ -13,3 +13,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+jwt:
+  signerKey: "clA8K37zrOY5EoPGI0TLUCJZmCik3ZBpgju5SZHny3nR/TcZYRz4lh3FIkLec2lZ"
+  app-jwt-expiration-milliseconds: 604800000 #in seconds
+
