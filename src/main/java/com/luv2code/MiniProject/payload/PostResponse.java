@@ -6,13 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class RegisterDto {
-    String name;
-    String username;
-    String email;
-    String password;
+public class PostResponse {
+    List<PostDto> content;
+    int pageNo;
+    int pageSize;
+    long totalElements;
+    int totalPages;
+    boolean last;
 }

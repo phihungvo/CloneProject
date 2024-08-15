@@ -62,8 +62,13 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         if (userRepository.existsByUsername(registerDto.getUsername()))
             throw new BlogApiException(HttpStatus.BAD_REQUEST, "Username is already existed");
 
-        passwordEncoder.encode(registerDto.getPassword());
-        User user = registerMapper.toEntity(registerDto);
+
+        User user = new User();
+        user.setName(registerDto.getName());
+        user.setUsername(registerDto.getUsername());
+        user.setEmail(registerDto.getEmail());
+        user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
+        registerMapper.toEntity(registerDto);
 
         Set<Role> roles = new HashSet<>();
         Role userRole = roleRepository.findByName("ROLE_USER").get();

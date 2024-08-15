@@ -10,9 +10,8 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class RegisterDto {
+public class CategoryDto {
+    Long id;
     String name;
-    String username;
-    String email;
-    String password;
+    String description;
 }
